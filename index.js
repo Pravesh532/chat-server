@@ -9,7 +9,11 @@ const app = express();
 
 // using middleware
 app.use(express.json());
-app.use(cors());
+
+app.use(cors({
+  origin: "*", // or your frontend URL
+  credentials: true,
+}));
 
 //importing routes
 import userRoutes from "./routes/userRoutes.js";
